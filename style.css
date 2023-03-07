@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.eq-carousel-container {
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.eq-carousel {
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.eq-carousel::before {
+    content: "";
+    width: calc(25% + 1px);
+    height: 150px;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    z-index: 3;
+}
+
+.eq-carousel::after {
+    content: "";
+    width: calc(25% + 1px);
+    height: 150px;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    z-index: 3;
+}
+
+.eq-slide {
+    width: 25%;
+    height: 150px;
+    overflow: hidden;
+    border-right: 1px solid gray;
+    transition: width 1s ease-in-out;
+    font-variant: small-caps;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    position: relative;  
+}
+
+@media all and (max-width: 799px) {
+    .eq-slide {
+        width: 50%;
+        left: -75%;
+        border: none;
+    }
+}
+
+.eq-slide p {
+    padding: 1em;
+    margin: 0;
+}
+
+.eq-shrink {
+    width: 0px;
+    transition: all 1s ease-in-out;
+}
+
+.eq-btn {
+    position: absolute;
+    top: calc(50% - 17px);
+    z-index: 4;
+    background: white;
+    border: 2px solid #666;
+    color: #666;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+.eq-btn-l {    
+    left: 10%;
+}
+
+.eq-btn-r {
+    right: 10%;
+}
+
+.eq-slide span {
+    font-family: serif;
+    font-size: 1.5em;
+    display: block;
+    color: #666;
+    font-weight: bold;
+}
